@@ -8,11 +8,15 @@ body {
 }
 
 #logo {
+    transition: transform 0.2s ease-in-out;
     display: block;
     margin: 15px auto 0 auto; /* Negative margin to bring it closer */
     width: 120px; /* Adjust width if needed */
 }
 
+#logo:hover {
+    transform: scale(1.1);
+}
 h1 {
     font-size: 14pt;
     font-weight: bold;
