@@ -1,0 +1,63 @@
+body {
+    font-family: "Times New Roman", serif;
+    background-color: white;
+    color: black;
+    margin: 20px auto;
+    max-width: 650px;
+    line-height: 1.2;
+}
+
+#logo {
+    display: block;
+    margin: 15px auto 0 auto; /* Negative margin to bring it closer */
+    width: 120px; /* Adjust width if needed */
+}
+
+h1 {
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 0px; /* Vermindert de ruimte tussen het logo en de titel */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 12pt;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:visited {
+    color: gray;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 5px;
+    font-size: 12pt;
+}
+
+strong {
+    font-weight: bold;
+}
