@@ -65,3 +65,37 @@ li {
 strong {
     font-weight: bold;
 }
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align to the left */
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.gallery figure {
+    position: relative;
+    width: 120%;  /* Scale up to 120% */
+    transform: translateX(-10%); /* Shift it left slightly to compensate */
+}
+
+.gallery img, 
+.gallery video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery figcaption {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .gallery figure {
+        width: 100%; /* On mobile, keep it normal size */
+        transform: none;
+    }
+}
