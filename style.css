@@ -67,46 +67,38 @@ strong {
 }
 .gallery {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align to the left */
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.gallery figure {
-    position: relative;
-    width: 120%;  /* Scale up to 120% */
-    transform: translateX(-10%); /* Shift it left slightly to compensate */
-}
-
-.gallery img, 
-.gallery video {
-    width: 100%;
-    height: auto;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Keep everything aligned to the left */
+    max-width: 100%;
+  }
+  
+  .gallery figure {
+    width: 120%; /* Keep the zoom effect */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .gallery img,
+  .gallery video {
+    width: 120%; /* Maintain the zoom effect */
+    max-width: none; /* Allow overflow for zoom effect */
+    height: auto; /* Keep aspect ratio */
     display: block;
-}
-
-.gallery figcaption {
-    font-size: 14px;
-    text-align: left;
-    margin-top: 5px;
-}
-
-@media (max-width: 768px) {
+  }
+  
+  figcaption {
+    text-align: left; /* Keep captions aligned to the left */
+    padding: 5px 0;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
     .gallery figure {
-      width: 100%; /* Ensures the figure takes the full width */
-      margin: 0; /* Removes unnecessary spacing */
+      width: 120%; /* Keep zoom effect on mobile */
     }
-  
-    .gallery img, .gallery video {
-      width: 100%; /* Ensures the media scales properly */
-      max-width: 100%; /* Prevents overflow */
-      height: auto; /* Maintains aspect ratio */
-    }
-  
-    figcaption {
-      text-align: center; /* Centers captions for readability */
+    .gallery img,
+    .gallery video {
+      width: 120%; /* Prevent it from shrinking */
     }
   }
   
