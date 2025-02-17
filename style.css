@@ -73,14 +73,14 @@ strong {
 }
 
 .gallery figure {
-    width: 120%; /* Keep the zoom effect */
+    width: 100%; /* Keep the zoom effect */
     margin: 0;
     padding: 0;
 }
 
 .gallery img,
 .gallery video {
-    width: 120%; /* Maintain the zoom effect */
+    width: 100%; /* Maintain the zoom effect */
     max-width: none; /* Allow overflow for zoom effect */
     height: auto; /* Keep aspect ratio */
     display: block;
