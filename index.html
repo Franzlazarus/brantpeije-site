@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brant Peije Teunis</title>
     <link rel="stylesheet" href="style.css">
-    
+    <!-- Load Matter.js first -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 </head>
 <body>
-    <a href="index.html">
-        <img id="logo" src="images/BPLogo_transparant.png" alt="Brant Peije Teunis Logo">
-    </a>
+    <div style="text-align: center;">
+        <a href="index.html" style="display: block;">
+            <img id="home-logo" src="images/BPLogo_transparant.png" alt="Brant Peije Teunis Logo">
+        </a>
+        <div style="font-size: 0.75em; margin-top: -40px; color: black;">
+            Double <span style="font-size: 1.1em;">↑</span> Click
+        </div>
+        <div id="sound-toggle-container">
+            <button id="soundSwitch" class="flick-switch">Sound</button>
+        </div>
+        
+    </div>
     <h1>Brant Peije Teunis</h1>
     <p>Componist | Amsterdam</p>
+
     <nav>
         <ul>
             <li><a href="scores.html">Scores en PDF's</a></li>
@@ -20,7 +31,8 @@
             <li><a href="https://tallgrass.band" target="_blank">Tall Grass</a></li>
         </ul>
     </nav>
-    
+    <!-- <button id="shockwaveBtn" style="z-index:999999;">Clear</button> -->
+
     <h2>Opleiding</h2>
     <p>HKU Muziek en Technologie (2019-2024) - Bachelor of Music, specialisatie Composition for Electronic Music</p>
     

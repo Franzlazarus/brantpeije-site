@@ -7,22 +7,16 @@ body {
     line-height: 1.2;
 }
 
-#logo {
+#home-logo {
     transition: transform 0.2s ease-in-out;
     display: block;
-    margin: 15px auto 0 auto; /* Negative margin to bring it closer */
-    width: 120px; /* Adjust width if needed */
+    margin: 15px auto 0 auto; /* Keeps it centered */
+    max-width: 120px; /* Prevents it from being too large */
+    height: auto; /* Ensures aspect ratio is maintained */
 }
 
-#logo:hover {
-    transform: scale(1.1);
-}
-h1 {
-    font-size: 14pt;
-    font-weight: bold;
-    text-align: left;
-    margin-top: 0px; /* Vermindert de ruimte tussen het logo en de titel */
-    margin-bottom: 10px;
+#home-logo:hover {
+    transform: scale(1.1); /* Restores hover effect */
 }
 
 h2 {
@@ -106,4 +100,190 @@ figcaption {
     text-align: left; /* Keep captions aligned to the left */
     padding: 5px 0;
     font-size: 0.9em; /* Adjust caption size slightly */
+}
+
+/* Falling music notes */
+.music-note {
+    position: fixed;
+    top: 0;
+    font-size: 24px;
+    color: black;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 999;
+    animation: fallAndSpin linear infinite;
+}
+
+@keyframes fallAndSpin {
+    0% {
+        transform: translateY(-10vh) translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(20vh) translateX(20px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(50vh) translateX(-20px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(75vh) translateX(15px) rotate(270deg);
+    }
+    100% {
+        transform: translateY(100vh) translateX(0) rotate(360deg);
+    }
+}
+
+/* Video Styling */
+#myVideo {
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(-4px) rotate(-4deg) scale(1.1); }
+    25% { transform: translateX(4px) rotate(4deg) scale(1.15); }
+    50% { transform: translateX(-4px) rotate(-4deg) scale(1.1); }
+    75% { transform: translateX(4px) rotate(4deg) scale(1.15); }
+    100% { transform: translateX(0) rotate(0) scale(1.1); }
+}
+.vibrating {
+    animation: vibrate 0.3s ease-in-out;
+}
+.tiny-logo {
+    position: fixed;
+    top: 0;
+    width: 45px; /* 50% bigger than before */
+    height: auto;
+    animation: fallAndBounce 6s ease-in-out forwards;
+}
+
+@keyframes fallAndBounce {
+    0% { transform: translateY(-10vh) scale(1); }
+    80% { transform: translateY(90vh) scale(1.5); } /* Falls down and enlarges */
+    90% { transform: translateY(87vh) scale(1.3); } /* Small bounce up */
+    100% { transform: translateY(90vh) scale(1.5); } /* Settles at the bottom */
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    pointer-events: none;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+  }
+  
+  .switch input { display: none; }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider { background-color: #4CAF50; }
+  input:checked + .slider:before { transform: translateX(14px); }
+  
+  #sound-toggle-container {
+    display: flex;
+    justify-content: center; /* Center it */
+    margin-top: 15px; /* Adjust spacing */
+}
+
+.flick-switch {
+    background-color: #bbb;
+    border: 1px solid black; /* Thinner border */
+    font-size: 8px; /* Smaller text */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 2px 6px; /* Smaller padding */
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 1px 1px 0px black;
+    margin-top: -10px; /* Adjust height position */
+
+    position: relative;
+    z-index: 100;
+    
+    width: 50px; /* Reduce button width */
+    height: 18px; /* Reduce button height */
+    line-height: 14px; /* Adjust text alignment */
+}
+
+.flick-switch.on {
+    background-color: #4CAF50;
+    color: white;
+    transform: translateY(-1px);
+}
+
+
+#sound-label {
+    color: black; /* Match the text style */
+}
+
+/* Custom switch styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input { display: none; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50; /* Green when ON */
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
 }
